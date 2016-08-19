@@ -192,9 +192,26 @@ define([
                         textureCoordinates[textureCoordIndex + bottomOffset2] = stx;
                         textureCoordinates[textureCoordIndex + 1 + bottomOffset2] = sty;
                     }
+
                     if (top) {
                         textureCoordinates[textureCoordIndex] = stx;
                         textureCoordinates[textureCoordIndex + 1] = sty;
+                        if (textureCoordIndex == 0) {
+                            textureCoordinates[textureCoordIndex] = 0;
+                            textureCoordinates[textureCoordIndex + 1] = 0;
+                        }
+                        else if (textureCoordIndex == 2) {
+                            textureCoordinates[textureCoordIndex] = 1;
+                            textureCoordinates[textureCoordIndex + 1] = 0;
+                        }
+                        else if (textureCoordIndex == 4) {
+                            textureCoordinates[textureCoordIndex] = 1;
+                            textureCoordinates[textureCoordIndex + 1] = 1;
+                        }
+                        else if (textureCoordIndex == 6) {
+                            textureCoordinates[textureCoordIndex] = 0;
+                            textureCoordinates[textureCoordIndex + 1] = 1;
+                        }
                     }
 
                     textureCoordIndex += 2;
